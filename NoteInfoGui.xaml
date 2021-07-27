@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="ArduinoMIDIMessenger.NoteInfoGui"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ArduinoMIDIMessenger"
+             mc:Ignorable="d" 
+             HorizontalAlignment="Left" VerticalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+	<StackPanel Width="150" HorizontalAlignment="Left" VerticalAlignment="Center">
+		<TextBlock Text="Channel Number"/>
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="2*"/>
+				<ColumnDefinition Width="1*"/>
+			</Grid.ColumnDefinitions>
+			<Button x:Name="ChannelDecrementButton" Content="-" Grid.Column="0" Click="ChannelDecrementButton_Click"/>
+			<ComboBox x:Name="ChannelNumberList" SelectedIndex="0" Grid.Column="1" SelectionChanged="ChannelNumberList_SelectionChanged">
+				<ComboBoxItem>0</ComboBoxItem>
+				<ComboBoxItem>1</ComboBoxItem>
+				<ComboBoxItem>2</ComboBoxItem>
+				<ComboBoxItem>3</ComboBoxItem>
+				<ComboBoxItem>4</ComboBoxItem>
+				<ComboBoxItem>5</ComboBoxItem>
+				<ComboBoxItem>6</ComboBoxItem>
+				<ComboBoxItem>7</ComboBoxItem>
+				<ComboBoxItem>8</ComboBoxItem>
+				<ComboBoxItem>9</ComboBoxItem>
+				<ComboBoxItem>10</ComboBoxItem>
+				<ComboBoxItem>11</ComboBoxItem>
+				<ComboBoxItem>12</ComboBoxItem>
+				<ComboBoxItem>13</ComboBoxItem>
+				<ComboBoxItem>14</ComboBoxItem>
+				<ComboBoxItem>15</ComboBoxItem>
+			</ComboBox>
+			<Button x:Name="ChannelIncrementButton" Content="+" Grid.Column="2" Click="ChannelIncrementButton_Click"/>
+		</Grid>
+		<TextBlock Text="Octave Number"/>
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="2*"/>
+				<ColumnDefinition Width="1*"/>
+			</Grid.ColumnDefinitions>
+			<Button x:Name="OctaveDecrementButton" Content="-" Grid.Column="0" Click="OctaveDecrementButton_Click"/>
+			<ComboBox x:Name="OctaveNumberList" SelectedIndex="0" Grid.Column="1" SelectionChanged="OctaveNumberList_SelectionChanged">
+				<ComboBoxItem>0</ComboBoxItem>
+				<ComboBoxItem>1</ComboBoxItem>
+				<ComboBoxItem>2</ComboBoxItem>
+				<ComboBoxItem>3</ComboBoxItem>
+				<ComboBoxItem>4</ComboBoxItem>
+				<ComboBoxItem>5</ComboBoxItem>
+				<ComboBoxItem>6</ComboBoxItem>
+				<ComboBoxItem>7</ComboBoxItem>
+				<ComboBoxItem>8</ComboBoxItem>
+			</ComboBox>
+			<Button x:Name="OctaveIncrementButton" Content="+" Grid.Column="2" Click="OctaveIncrementButton_Click"/>
+		</Grid>
+		<TextBlock Text="Assigned Note"/>
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="1*"/>
+				<ColumnDefinition Width="2*"/>
+				<ColumnDefinition Width="1*"/>
+			</Grid.ColumnDefinitions>
+			<Button x:Name="NoteDecrementButton" Content="-" Grid.Column="0" Click="NoteDecrementButton_Click"/>
+			<ComboBox x:Name="NoteList" SelectedIndex="0" Grid.Column="1" SelectionChanged="NoteList_SelectionChanged">
+				<ComboBoxItem>C</ComboBoxItem>
+				<ComboBoxItem>C#</ComboBoxItem>
+				<ComboBoxItem>D</ComboBoxItem>
+				<ComboBoxItem>D#</ComboBoxItem>
+				<ComboBoxItem>E</ComboBoxItem>
+				<ComboBoxItem>F</ComboBoxItem>
+				<ComboBoxItem>F#</ComboBoxItem>
+				<ComboBoxItem>G</ComboBoxItem>
+				<ComboBoxItem>G#</ComboBoxItem>
+				<ComboBoxItem>A</ComboBoxItem>
+				<ComboBoxItem>A#</ComboBoxItem>
+				<ComboBoxItem>B</ComboBoxItem>
+			</ComboBox>
+			<Button x:Name="NoteIncrementButton" Content="+" Grid.Column="2" Click="NoteIncrementButton_Click"/>
+		</Grid>
+		<Button x:Name="RemoveButton" Content="Remove" Background="Red" Foreground="White" Click="RemoveNoteButton_Click"/>
+	</StackPanel>
+</UserControl>

@@ -1,0 +1,32 @@
+﻿<Window x:Class="ArduinoMIDIMessenger.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ArduinoMIDIMessenger"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="540" Width="960" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+	<Grid Margin="20">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="1*"/>
+			<RowDefinition Height="4*"/>
+		</Grid.RowDefinitions>
+		<StackPanel Grid.Row="0">
+			<TextBlock x:Name="TopText" Text="8 keys of the home row keys are used for notes" Margin="0 0 0 10" FontSize="16" FontWeight="Bold"/>
+			<TextBlock Text="Serial Port" Margin="0 0 0 10" FontSize="16" FontWeight="Bold"/>
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="2*"/>
+					<ColumnDefinition Width="1*"/>
+					<ColumnDefinition Width="1*"/>
+				</Grid.ColumnDefinitions>
+				<ComboBox x:Name="COMPPortList" Margin="2" Grid.Column="0"/>
+				<Button x:Name="RefreshCOMPortListButton" Content="Refresh" Margin="2" FontSize="14" FontWeight="DemiBold" Grid.Column="1" Click="RefreshCOMPortListButton_Click"/>
+				<Button Content="Connect" Margin="2" FontSize="14" FontWeight="DemiBold" Grid.Column="2" Click="ConnectButton_Click"/>
+			</Grid>
+		</StackPanel>
+		<GroupBox Header="Virtual MIDI Devices" FontSize="18" Padding="10" VerticalContentAlignment="Top" HorizontalContentAlignment="Stretch" Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Auto">
+			<ListView x:Name="VirtualMidiDeviceGuiList" VerticalContentAlignment="Top" HorizontalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled"/>
+		</GroupBox>
+	</Grid>
+</Window>
